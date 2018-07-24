@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="dataSource">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.9">
+    <root id="1">
+      <ServerVersion>9.2.19</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="academ">
+      <ObjectId>33130</ObjectId>
+    </database>
+    <database id="3" parent="1" name="calendar">
+      <ObjectId>16530</ObjectId>
+    </database>
+    <database id="4" parent="1" name="calendardb">
+      <ObjectId>33061</ObjectId>
+      <IntrospectionStateNumber>2</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="5" parent="1" name="postgres">
+      <ObjectId>12002</ObjectId>
+      <Comment>default administrative connection database</Comment>
+    </database>
+    <database id="6" parent="1" name="reminderdb">
+      <ObjectId>16393</ObjectId>
+    </database>
+    <database id="7" parent="1" name="students">
+      <ObjectId>33173</ObjectId>
+    </database>
+    <role id="8" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <schema id="9" parent="4" name="information_schema">
+      <ObjectId>11459</ObjectId>
+    </schema>
+    <schema id="10" parent="4" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+    </schema>
+    <schema id="11" parent="4" name="pg_temp_1">
+      <ObjectId>11194</ObjectId>
+    </schema>
+    <schema id="12" parent="4" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <Comment>reserved schema for TOAST tables</Comment>
+    </schema>
+    <schema id="13" parent="4" name="pg_toast_temp_1">
+      <ObjectId>11195</ObjectId>
+    </schema>
+    <schema id="14" parent="4" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <IntrospectionTimestamp>2018-07-06.21:14:59.878</IntrospectionTimestamp>
+      <IntrospectionStateNumber>991</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <access-method id="15" parent="4" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+    </access-method>
+    <access-method id="16" parent="4" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+    </access-method>
+    <access-method id="17" parent="4" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+    </access-method>
+    <access-method id="18" parent="4" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+    </access-method>
+    <access-method id="19" parent="4" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+    </access-method>
+    <sequence id="20" parent="14" name="check_list_id_seq">
+      <ObjectId>33116</ObjectId>
+      <StateNumber>930</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="21" parent="14" name="people_id_seq">
+      <ObjectId>33062</ObjectId>
+      <StateNumber>916</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="22" parent="14" name="task_id_seq">
+      <ObjectId>33097</ObjectId>
+      <StateNumber>929</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="23" parent="14" name="type_task_id_seq">
+      <ObjectId>33071</ObjectId>
+      <StateNumber>925</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="24" parent="14" name="check_list">
+      <ObjectId>33118</ObjectId>
+      <StateNumber>930</StateNumber>
+    </table>
+    <table id="25" parent="14" name="people">
+      <ObjectId>33064</ObjectId>
+      <StateNumber>929</StateNumber>
+    </table>
+    <table id="26" parent="14" name="task">
+      <ObjectId>33099</ObjectId>
+      <StateNumber>930</StateNumber>
+    </table>
+    <table id="27" parent="14" name="type_task">
+      <ObjectId>33073</ObjectId>
+      <StateNumber>929</StateNumber>
+    </table>
+    <column id="28" parent="24" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>930</StateNumber>
+      <DefaultExpression>nextval(&apos;check_list_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>check_list_id_seq</SequenceName>
+    </column>
+    <column id="29" parent="24" name="description">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <StateNumber>930</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="30" parent="24" name="is_complete">
+      <Position>3</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>930</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="31" parent="24" name="id_task">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>930</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="32" parent="24" name="check_list_pkey">
+      <ObjectId>33123</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="33" parent="24" name="check_list_pkey">
+      <ObjectId>33124</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>check_list_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="34" parent="24" name="check_list_task_id_fk">
+      <ObjectId>33125</ObjectId>
+      <ColNames>id_task</ColNames>
+      <RefTableId>33099</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>task</RefTableName>
+      <RefKeyName>task_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="35" parent="25" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>916</StateNumber>
+      <DefaultExpression>nextval(&apos;people_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>people_id_seq</SequenceName>
+    </column>
+    <column id="36" parent="25" name="firstname">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>916</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="37" parent="25" name="lastname">
+      <Position>3</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>916</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="38" parent="25" name="email">
+      <Position>4</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>916</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="39" parent="25" name="login">
+      <Position>5</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>916</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="40" parent="25" name="password">
+      <Position>6</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>916</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="41" parent="25" name="is_blocked">
+      <Position>7</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>916</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="42" parent="25" name="role">
+      <Position>8</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>991</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="43" parent="25" name="people_pkey">
+      <ObjectId>33069</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="44" parent="25" name="people_pkey">
+      <ObjectId>33070</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>people_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="45" parent="26" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>929</StateNumber>
+      <DefaultExpression>nextval(&apos;task_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>task_id_seq</SequenceName>
+    </column>
+    <column id="46" parent="26" name="event">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>929</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="47" parent="26" name="date">
+      <Position>3</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>929</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="48" parent="26" name="is_complete">
+      <Position>4</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>929</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="49" parent="26" name="id_people">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>929</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="50" parent="26" name="id_type">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>929</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="51" parent="26" name="task_pkey">
+      <ObjectId>33104</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="52" parent="26" name="task_pkey">
+      <ObjectId>33105</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>task_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="53" parent="26" name="task_people_id_fk">
+      <ObjectId>33106</ObjectId>
+      <ColNames>id_people</ColNames>
+      <RefTableId>33064</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>people</RefTableName>
+      <RefKeyName>people_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="54" parent="26" name="task_type_task_id_fk">
+      <ObjectId>33111</ObjectId>
+      <ColNames>id_type</ColNames>
+      <RefTableId>33073</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>type_task</RefTableName>
+      <RefKeyName>type_task_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="55" parent="27" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>925</StateNumber>
+      <DefaultExpression>nextval(&apos;type_task_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>type_task_id_seq</SequenceName>
+    </column>
+    <column id="56" parent="27" name="type">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>925</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="57" parent="27" name="date_from">
+      <Position>3</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>925</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="58" parent="27" name="date_to">
+      <Position>4</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>925</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <index id="59" parent="27" name="type_task_pkey">
+      <ObjectId>33077</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="60" parent="27" name="type_task_pkey">
+      <ObjectId>33078</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>type_task_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
